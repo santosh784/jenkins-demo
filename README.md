@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build Info') {
+            steps {
+                bat """
+                @echo off
+                echo === Project 3: Jenkins Build Info ===
+                echo Job: %JOB_NAME%
+                echo Build: %BUILD_NUMBER%
+                echo Workspace: %WORKSPACE%
+                echo Date: %DATE% %TIME%
+                """
+            }
+        }
+    }
+}
